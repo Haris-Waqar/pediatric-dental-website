@@ -75,8 +75,8 @@ export function Header() {
   const [mobileNavOpen, setMobileNavOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#38B6FF]">
-      <div className="w-full px-6 lg:px-[96px] min-h-[85px py-1">
+    <header className="sticky top-0 z-50 w-full bg-[#00aeef]">
+      <div className="w-full px-[5%] min-h-[90px] py-2">
         <div className="flex h-[78px] items-center justify-between gap-6">
           <div className="flex items-center gap-12">
             {/* Logo */}
@@ -99,7 +99,7 @@ export function Header() {
                     <NavigationMenuItem key={item.label}>
                       {item.children ? (
                         <>
-                          <NavigationMenuTrigger className="bg-transparent text-white hover:bg-transparent hover:text-[#ff3399] focus:bg-transparent focus:text-[#ff3399] data-[state=open]:bg-transparent data-[state=open]:text-[#ff3399] px-3 py-2 text-[15px] font-semibold tracking-tight h-auto font-heading transition-colors [&_svg]:text-current [&_svg]:transition-colors">
+                          <NavigationMenuTrigger className="bg-transparent text-white hover:bg-transparent hover:text-[#ec008c] focus:bg-transparent focus:text-[#ec008c] data-[state=open]:bg-transparent data-[state=open]:text-[#ec008c] px-3 py-2 text-[15px] font-semibold tracking-tight h-auto font-heading transition-colors [&_svg]:text-current [&_svg]:transition-colors">
                             {item.label}
                           </NavigationMenuTrigger>
                           <NavigationMenuContent>
@@ -113,7 +113,7 @@ export function Header() {
                                         "block select-none rounded-md px-4 py-2.5 leading-tight no-underline outline-none transition-colors font-content",
                                         index === 0 
                                           ? "text-base font-bold text-black font-heading" 
-                                          : "text-sm font-semibold text-black hover:bg-[#38B6FF]/10 hover:text-[#38B6FF] focus:bg-[#38B6FF]/10 focus:text-[#38B6FF]"
+                                          : "text-sm font-semibold text-black hover:bg-[#00aeef]/10 hover:text-[#00aeef] focus:bg-[#00aeef]/10 focus:text-[#00aeef]"
                                       )}
                                     >
                                       {child.label}
@@ -129,7 +129,7 @@ export function Header() {
                           <NavigationMenuLink
                             className={cn(
                               navigationMenuTriggerStyle(),
-                              "bg-transparent text-white hover:bg-transparent hover:text-[#ff3399] focus:bg-transparent focus:text-[#ff3399] px-3 py-2 text-[15px] font-semibold tracking-tight h-auto font-heading transition-colors"
+                              "bg-transparent text-white hover:bg-transparent hover:text-[#ec008c] focus:bg-transparent focus:text-[#ec008c] px-3 py-2 text-[15px] font-semibold tracking-tight h-auto font-heading transition-colors"
                             )}
                           >
                             {item.label}
@@ -147,7 +147,7 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
             <Button
               size="sm"
-              className="rounded-[1.2rem] bg-[#EC008C] pt-[15px] pr-[18.75px] pb-[9px] pl-[18.75px] h-[48.98px] text-[16.65px] font-semibold text-white hover:bg-[#d1007d] shadow-md border-0 font-content"
+              className="rounded-[1.2rem] bg-[#ec008c] px-[1.75rem] pt-[0.9rem] pb-[0.7rem] h-auto text-[1rem] font-semibold text-white hover:bg-[#d1007d] shadow-md border-0 font-content"
               asChild
             >
               <Link href="https://flexbook.me/brookspd/website" target="_blank">
@@ -156,7 +156,7 @@ export function Header() {
             </Button>
             <Button
               size="sm"
-              className="rounded-[1.2rem] bg-[#F27F31] pt-[15px] pr-[18.75px] pb-[9px] pl-[18.75px] h-[48.98px] text-[16.65px] font-semibold text-white hover:bg-[#e07025] shadow-md border-0 font-content"
+              className="rounded-[1.2rem] bg-[#f5821f] px-[1.75rem] pt-[0.9rem] pb-[0.7rem] h-auto text-[1rem] font-semibold text-white hover:bg-[#e07025] shadow-md border-0 font-content"
               asChild
             >
               <a href="tel:2108019715">210-801-9715</a>

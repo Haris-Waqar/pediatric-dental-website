@@ -11,7 +11,7 @@ import toothPink from "../../../public/images/tooth-pink.webp";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#7C51A1] pb-[220px] pt-12 lg:pt-20 lg:pb-[160px]">
+    <section className="relative overflow-hidden bg-[#7c51a1] pb-[220px] pt-10 lg:pt-20 lg:pb-[160px]">
       {/* Background Image Layer */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -49,18 +49,20 @@ export function Hero() {
       </div>
 
       {/* Content Layer */}
-      <div className="relative z-10 px-6 lg:px-[400px]">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-8 items-center min-h-[500px] lg:min-h-[650px] py-8 lg:py-12">
+      <div className="relative z-10 px-[5%]">
+        <div className="mx-auto grid max-w-[80rem] items-center gap-10 lg:grid-cols-[1fr_1fr] lg:gap-20 min-h-[500px] lg:min-h-[640px] py-6 lg:py-12">
           {/* Content - Left Side */}
-          <div className="text-center order-2 lg:order-1 relative z-10">
-            <h1 className="text-[48px] sm:text-[60px] md:text-[60px] lg:text-[60px] leading-[1.1] font-bold text-white mb-8 font-heading whitespace-normal">
-              Top Pediatric Dentist<br className="hidden lg:block" />
+          <div className="text-center lg:text-left order-2 lg:order-1 relative z-10">
+            <h1 className="text-[42px] sm:text-[56px] lg:text-[64px] leading-[1.2] font-normal text-white mb-8 font-heading whitespace-normal">
+              <strong className="font-normal">
+                Top Pediatric Dentist<br className="hidden lg:block" />
+              </strong>
               in San Antonio
             </h1>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
                 size="lg"
-                className="h-[58px] rounded-[1.2rem] bg-[#f5821f] hover:bg-[#e87713] text-white text-base px-8 font-semibold font-content shadow-lg transition-all"
+                className="rounded-[1.2rem] bg-[#f5821f] hover:bg-[#e87713] text-white text-[1.11rem] font-semibold font-content shadow-lg transition-all px-[2.5rem] pt-[1.25rem] pb-[1rem] min-w-[10rem] h-auto"
                 asChild
               >
                 <Link href={heroContent.ctaHref}>{heroContent.ctaText}</Link>
@@ -69,13 +71,12 @@ export function Hero() {
           </div>
 
           {/* Right Side Image */}
-          <div className="relative order-1 lg:order-2 flex justify-end z-10">
-            <div className="relative w-full  max-w-[400px] sm:max-w-[500px] lg:max-w-[620px] xl:max-w-[700px] aspect-[1.5/1] rounded-[2.75rem] overflow-hidden shadow-[0_16px_30px_rgba(0,0,0,0.18)] border-[5px] border-[#a6ce39]">
+          <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end z-10">
+            <div className="relative w-full max-w-[420px] sm:max-w-[520px] lg:max-w-[620px] aspect-[3/2] rounded-[3.375rem] overflow-hidden shadow-[0_16px_30px_rgba(0,0,0,0.18)] border-[5px] border-[#a6ce39]">
               <Image
                 src={heroImg}
                 alt="Pediatric dentist with child"
                 fill
-                
                 className="object-cover"
                 priority
               />

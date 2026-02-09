@@ -8,6 +8,9 @@ import toothPink from "../../../public/images/tooth-pink.webp";
 import ladybugRed from "../../../public/images/ladybug-red.webp";
 import dentistTeam from "../../../public/images/dentist-team.jpg";
 import orangeWave from "../../../public/images/orange-wave.png";
+import serviceChildren from "../../../public/images/service-children.svg";
+import serviceCleanings from "../../../public/images/service-cleanings.svg";
+import serviceSedation from "../../../public/images/service-sedation.svg";
 import {
   Carousel,
   CarouselContent,
@@ -20,18 +23,23 @@ import {
 const services = [
   {
     title: "Children's Dentistry",
-    color: "bg-blue-400",
-    icon: "🦷",
+    color: "bg-[#00aeef]",
+    icon: serviceChildren,
   },
   {
     title: "Cleanings & Exams",
-    color: "bg-green-400",
-    icon: "🦷",
+    color: "bg-[#a6ce39]",
+    icon: serviceCleanings,
   },
   {
     title: "Sedation Dentistry",
-    color: "bg-purple-600",
-    icon: "🦷",
+    color: "bg-[#7c51a1]",
+    icon: serviceSedation,
+  },
+  {
+    title: "Orthodontics",
+    color: "bg-[#ec008c]",
+    icon: serviceChildren,
   },
 ];
 
@@ -86,20 +94,20 @@ export function Welcome() {
         />
       </div>
 
-      <div className="relative z-[3] px-6 lg:px-[96px]">
-        <div className="mx-auto max-w-6xl">
+      <div className="relative z-[3] px-[5%]">
+        <div className="mx-auto max-w-[80rem]">
           {/* Title */}
-          <div className="text-center lg:text-right mb-12">
-            <h2 className="text-[28px] sm:text-[32px] lg:text-[36px] font-bold text-[#6c4b8c] font-heading leading-tight">
-              Welcome to <span className="text-[#6c4b8c]">Brooks Pediatric Dentistry & Orthodontics</span> in San Antonio, TX!
+          <div className="text-left mb-12">
+            <h2 className="text-[32px] sm:text-[36px] lg:text-[40px] font-normal text-[#7c51a1] font-heading leading-tight">
+              {welcomeContent.title}
             </h2>
           </div>
 
           {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-center mb-16">
+          <div className="grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-20 items-center mb-16">
             {/* Team Image - Left */}
             <div className="flex justify-center lg:justify-start relative">
-              <div className="relative h-[250px] w-[310px] overflow-hidden rounded-[46%] bg-white shadow-[0_20px_36px_rgba(0,0,0,0.12)] sm:h-[300px] sm:w-[360px] lg:h-[320px] lg:w-[400px]">
+              <div className="relative h-[260px] w-[320px] overflow-hidden rounded-[46%] bg-white shadow-[0_20px_36px_rgba(0,0,0,0.12)] sm:h-[320px] sm:w-[380px] lg:h-[360px] lg:w-[420px]">
                 <Image
                   src={dentistTeam}
                   alt="Brooks Pediatric Dentistry team"
@@ -122,19 +130,15 @@ export function Welcome() {
 
             {/* Text Content - Right */}
             <div className="text-left space-y-4">
-              <div className="text-[15px] leading-7 text-[#3d2a55] font-content">
-                <p className="mb-4">
-                  At <strong className="font-semibold">Brooks Pediatric Dentistry & Orthodontics</strong>, we go beyond just caring for teeth — we build confidence, trust, and lifelong healthy habits in every child we see. As your local pediatric dentist in San Antonio, we specialize in compassionate, kid-friendly care tailored to each child's unique dental needs.
-                </p>
-                <p className="mb-4">
-                  Whether it's your child's first visit or you're searching for a Kids Dentist Near Me, we're proud to serve families with expert pediatric care and gentle orthodontics right here in Brooks City Base and surrounding neighborhoods.
-                </p>
-              </div>
+              <div
+                className="text-[18px] leading-7 text-[#3d2a55] font-content"
+                dangerouslySetInnerHTML={{ __html: welcomeContent.description }}
+              />
             </div>
           </div>
 
           {/* Service Carousel */}
-          <div className="mt-16 relative px-12">
+          <div className="mt-16 relative">
             <Carousel
               setApi={setApi}
               opts={{
@@ -143,28 +147,26 @@ export function Welcome() {
               }}
               className="w-full"
             >
-              <CarouselContent className="-ml-2 md:-ml-4">
+              <CarouselContent className="-ml-4">
                 {services.map((service, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                    <div className={`${service.color} rounded-2xl p-8 h-[200px] flex flex-col items-center justify-center text-white shadow-lg`}>
-                      <div className="text-6xl mb-4">{service.icon}</div>
-                      <h3 className="text-xl font-bold text-center font-heading leading-tight">
-                        {service.title.includes("&") ? (
-                          <>
-                            {service.title.split(" & ")[0]}
-                            <br />
-                            & {service.title.split(" & ")[1]}
-                          </>
-                        ) : (
-                          service.title
-                        )}
+                  <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                    <div className={`${service.color} rounded-[2.5rem] p-10 h-[240px] flex flex-col items-center justify-center text-white shadow-[0_2px_5px_rgba(0,0,0,0.2)]`}>
+                      <Image
+                        src={service.icon}
+                        alt=""
+                        width={96}
+                        height={96}
+                        className="w-24 h-24 mb-6"
+                      />
+                      <h3 className="text-[28px] font-normal text-center font-heading leading-tight">
+                        {service.title}
                       </h3>
                     </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-0 bg-white border-2 border-[#6c4b8c] text-[#6c4b8c] hover:bg-[#6c4b8c] hover:text-white" />
-              <CarouselNext className="right-0 bg-white border-2 border-[#6c4b8c] text-[#6c4b8c] hover:bg-[#6c4b8c] hover:text-white" />
+              <CarouselPrevious className="-left-4 bg-white border-2 border-[#7c51a1] text-[#7c51a1] hover:bg-[#7c51a1] hover:text-white" />
+              <CarouselNext className="-right-4 bg-white border-2 border-[#7c51a1] text-[#7c51a1] hover:bg-[#7c51a1] hover:text-white" />
             </Carousel>
 
             {/* Carousel Indicators */}
@@ -173,7 +175,7 @@ export function Welcome() {
                 <div
                   key={index}
                   className={`w-2 h-2 rounded-full transition-all ${
-                    index === current ? "bg-[#6c4b8c]" : "bg-[#6c4b8c]/30 border border-[#6c4b8c]"
+                    index === current ? "bg-[#7c51a1]" : "bg-[#7c51a1]/30 border border-[#7c51a1]"
                   }`}
                 />
               ))}

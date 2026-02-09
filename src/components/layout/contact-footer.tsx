@@ -8,13 +8,13 @@ import ladybugRed from "../../../public/images/pink-tooth.webp";
 export function ContactFooter() {
   return (
     <section className="relative bg-white text-[#3d2a55] py-20 lg:py-24 pb-[460px]">
-      <div className="px-6 lg:px-16 mb-16">
-        <div className="mx-auto grid max-w-6xl lg:grid-cols-[1fr_1.35fr] gap-20 items-start">
+      <div className="px-[5%] mb-16">
+        <div className="mx-auto grid max-w-[80rem] lg:grid-cols-[1fr_1.35fr] gap-20 items-start">
           <div className="space-y-6 text-center lg:text-left">
-            <h3 className="text-[44px] font-heading text-[#ec008c]">
+            <h3 className="text-[40px] sm:text-[44px] lg:text-[48px] font-heading font-normal text-[#ec008c]">
               Contact Us!
             </h3>
-            <div className="text-[16px] leading-7 font-content text-[#3d2a55]">
+            <div className="text-[18px] leading-7 font-content text-[#3d2a55]">
               <p className="font-semibold underline underline-offset-4">
                 {siteConfig.address.address},
               </p>
@@ -23,11 +23,16 @@ export function ContactFooter() {
                 {siteConfig.address.zip}
               </p>
               <p className="mt-2">Office Hours: Mon – Fri: 8am – 5pm</p>
-              <p>Ph: <strong className="underline underline-offset-4">{siteConfig.phone}</strong></p>
+              <p>
+                Ph:{" "}
+                <strong className="underline underline-offset-4">
+                  {siteConfig.phone}
+                </strong>
+              </p>
             </div>
             <div className="flex justify-center lg:justify-start">
               <Button
-                className="h-[58px] rounded-[1.2rem] bg-[#f5821f] px-10 text-[18px] font-semibold text-white shadow-sm hover:bg-[#e87713]"
+                className="rounded-[1.2rem] bg-[#f5821f] px-[2.5rem] pt-[1.25rem] pb-[1rem] text-[1.11rem] font-semibold text-white shadow-sm hover:bg-[#e87713]"
                 asChild
               >
                 <Link href="/contact">Contact Us</Link>
