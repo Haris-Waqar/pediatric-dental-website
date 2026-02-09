@@ -1,8 +1,23 @@
 import type { Metadata } from "next";
+import { Madimi_One, Poppins } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { ContactFooter } from "@/components/layout/contact-footer";
 import { Footer } from "@/components/layout/footer";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: "swap",
+});
+
+const madimiOne = Madimi_One({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-madimi-one",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Brooks Pediatric Dentistry | Top Pediatric Dentist in San Antonio",
@@ -31,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${poppins.variable} ${madimiOne.variable}`}>
       <body className="antialiased">
         <Header />
         <main>{children}</main>

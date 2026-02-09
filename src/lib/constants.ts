@@ -112,21 +112,21 @@ export const actionCards: ActionCard[] = [
     title: "Request an Appointment",
     description: "Schedule your child's next visit online",
     buttonText: "Schedule Now",
-    href: "/contact",
+    href: "https://www.flexbook.me/brookspd/1",
     icon: "calendar",
   },
   {
-    title: "Patient Forms",
+    title: "Review Patient Forms",
     description: "Download and complete forms before your visit",
-    buttonText: "Get Forms",
-    href: "/patient-info/forms",
+    buttonText: "View Forms",
+    href: "/about/#forms",
     icon: "file-text",
   },
   {
     title: "Get Directions",
     description: "Find our office in San Antonio",
     buttonText: "View Map",
-    href: "/contact#map",
+    href: "https://www.google.com/maps/place/Brooks+Pediatric+Dentistry+and+Orthodontics/@29.3540242,-98.4615189,18z/data=!4m6!3m5!1s0x865cf7f48c4b1fe9:0xccd59fdf47d8e4ab!8m2!3d29.3512763!4d-98.4576721!16s%2Fg%2F11p3hd0sbb?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
     icon: "map-pin",
   },
 ];
@@ -139,17 +139,17 @@ export const heroContent = {
 };
 
 export const welcomeContent = {
-  title: "Welcome to Brooks Pediatric Dentistry",
-  description: `At Brooks Pediatric Dentistry, we are committed to providing compassionate, high-quality dental care for infants, children, teens, and patients with special needs. Our team creates a warm, welcoming environment where kids feel safe and comfortable during their dental visits.
-
-We believe that positive early dental experiences set the foundation for a lifetime of healthy smiles. Our office is designed with children in mind, featuring a fun, kid-friendly atmosphere that helps ease anxiety and makes dental visits something to look forward to.`,
+  title: "Welcome to Brooks Pediatric Dentistry & Orthodontics in San Antonio, TX!",
+  description: `At <a href="/about"><strong>Brooks Pediatric Dentistry & Orthodontics</strong></a>, we go beyond just caring for teeth — we build confidence, trust, and lifelong healthy habits in every child we see. As your local pediatric dentist in San Antonio, we specialize in compassionate, kid-friendly care tailored to each child’s unique dental needs.<br/><br/>Whether it’s your child’s first visit or you’re searching for a Kids Dentist Near Me, we’re proud to serve families with expert pediatric care and gentle orthodontics right here in Brooks City Base and surrounding neighborhoods.`,
 };
 
 export const gentleCareContent = {
-  title: "Gentle Care in a Kid-Friendly Environment",
-  description: `We understand that visiting the dentist can be overwhelming for children. That's why we've created a practice that feels more like a playground than a doctor's office. Our team is specially trained to work with children of all ages, using gentle techniques and positive reinforcement to build trust and confidence.
+  title: "Gentle, Fun, and Focused on Kids",
+  description: `We create an environment where children feel relaxed, safe, and even excited to visit the dentist. As a trusted provider of Brooks City Base pediatric dentistry, we help kids of all ages build positive dental habits through education and personalized care.
 
-From our colorful waiting room to our kid-sized dental chairs, every detail is designed to make your child feel at ease. We take the time to explain procedures in child-friendly terms and celebrate every milestone in your child's dental health journey.`,
+As a leading Brooks City Base kids dentist, our office was built just for kids—with bright colors, fun activities, and a caring team trained in pediatric dental techniques. We specialize in growing smiles and turning dental visits into positive experiences.
+
+Looking for Brooks City Base children's dentistry? You're in the right place.`,
 };
 
 export const affordableCareContent = {
@@ -170,8 +170,8 @@ export const emergencyContent = {
 };
 
 export const serviceAreaContent = {
-  title: "Proudly Serving San Antonio and Surrounding Areas",
-  description: `Brooks Pediatric Dentistry is conveniently located in North San Antonio, serving families throughout the greater San Antonio area including Stone Oak, Alamo Heights, Shavano Park, Hollywood Park, and surrounding communities.`,
+  title: "Proudly Serving Brooks City Base and Beyond",
+  description: `We’re proud to be a trusted pediatric dentist in San Antonio, providing care to families in Brooks City Base, Downtown San Antonio, South San Antonio, and neighborhoods near Corpus Christi Hwy. Conveniently located and always welcoming new smiles, we’re here to support your child’s dental health every step of the way.`,
   areas: [
     "Stone Oak",
     "Alamo Heights",
