@@ -85,11 +85,12 @@ export function Hero() {
       </div>
 
       {/* Wave decoration at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 z-[5] w-full pointer-events-none overflow-hidden h-[210px]" >
+      <div className="absolute bottom-0 left-0 right-0 z-[5] w-full pointer-events-none overflow-hidden h-[210px]">
         <Image
           src={heroWave}
           alt=""
-          className="w-full h-auto object-cover"
+          fill
+          className="object-fill"
           priority
         />
       </div>

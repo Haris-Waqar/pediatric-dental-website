@@ -103,7 +103,8 @@ export function FeatureGentle() {
         <Image
           src={heroWave}
           alt=""
-          className="w-full h-auto object-cover"
+          fill
+          className="object-fill"
           priority
         />
       </div>

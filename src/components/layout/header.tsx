@@ -125,16 +125,15 @@ export function Header() {
                           </NavigationMenuContent>
                         </>
                       ) : (
-                        <Link href={item.href} legacyBehavior passHref>
-                          <NavigationMenuLink
-                            className={cn(
-                              navigationMenuTriggerStyle(),
-                              "bg-transparent text-white hover:bg-transparent hover:text-[#ff3399] focus:bg-transparent focus:text-[#ff3399] px-3 py-2 text-[15px] font-semibold tracking-tight h-auto font-heading transition-colors"
-                            )}
-                          >
-                            {item.label}
-                          </NavigationMenuLink>
-                        </Link>
+                        <NavigationMenuLink
+                          asChild
+                          className={cn(
+                            navigationMenuTriggerStyle(),
+                            "bg-transparent text-white hover:bg-transparent hover:text-[#ff3399] focus:bg-transparent focus:text-[#ff3399] px-3 py-2 text-[15px] font-semibold tracking-tight h-auto font-heading transition-colors"
+                          )}
+                        >
+                          <Link href={item.href}>{item.label}</Link>
+                        </NavigationMenuLink>
                       )}
                     </NavigationMenuItem>
                   ))}
