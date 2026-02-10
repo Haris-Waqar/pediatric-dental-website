@@ -72,7 +72,7 @@ export function ServiceAreaMap() {
               {serviceAreaContent.description}
             </p>
             <Button
-              className="mt-6 h-[58px] rounded-full bg-[#ec008c] px-8 text-[18.75px] font-semibold text-white hover:bg-[#d9007f]"
+              className="mt-6 h-[58px] rounded-[1.2rem] bg-[#ec008c] px-8 text-[18.75px] font-semibold text-white hover:bg-[#d9007f]"
               asChild
             >
               <Link href="/contact">Contact Us</Link>
