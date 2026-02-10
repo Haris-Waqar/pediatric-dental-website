@@ -5,6 +5,8 @@ import { serviceAreaContent, actionCards } from "@/lib/constants";
 import { Calendar, FileText, MapPin } from "lucide-react";
 import heroWave from "../../../public/images/hero-wave.webp";
 import heroBackground from "../../../public/images/hero-background.webp";
+import ladybugSmall from "../../../public/images/ladybug-red.webp";
+import toothBlue from "../../../public/images/tooth-blue.webp";
 
 export function ServiceAreaMap() {
   return (
@@ -19,40 +21,45 @@ export function ServiceAreaMap() {
           priority
         />
       </div>
-      <div className="absolute inset-0 z-[1]">
+      <div className="absolute inset-x-0 bottom-0 h-3/4 z-[1]">
         <Image
           src={heroBackground}
           alt=""
           fill
-          className="object-cover opacity-35"
+          className="object-cover object-top"
           priority
         />
       </div>
 
       <div className="relative z-[3] px-6 lg:px-12">
-        <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[1fr_1.1fr]">
+        <div className="bg-white mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1fr_1.4fr]">
           <div className="flex justify-center">
-            <div className="relative h-[260px] w-[260px] overflow-hidden rounded-[44%] bg-white shadow-[0_18px_36px_rgba(0,0,0,0.12)] sm:h-[320px] sm:w-[320px] lg:h-[360px] lg:w-[360px]">
+            <div className="relative">
+              <div
+                className="relative h-[280px] w-[280px] overflow-hidden bg-white shadow-[0_18px_36px_rgba(0,0,0,0.12)] sm:h-[360px] sm:w-[360px] lg:h-[460px] lg:w-[460px]"
+                style={{ borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" }}
+              >
+                <Image
+                  src="/images/dentist-team.jpg"
+                  alt="Our pediatric dental team"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
               <Image
-                src="/images/dentist-team.jpg"
-                alt="Our pediatric dental team"
-                fill
-                className="object-cover"
-                priority
+                src={ladybugSmall}
+                alt=""
+                width={92}
+                height={92}
+                className="absolute -left-10 bottom-6"
               />
               <Image
-                src="/images/67573af7b44264d1c3b2c21b_Layer_1%20(1).webp"
+                src={toothBlue}
                 alt=""
-                width={70}
-                height={70}
-                className="absolute -left-2 bottom-6"
-              />
-              <Image
-                src="/images/67573f9781027e95187e44a0_Layer_1%20(3).webp"
-                alt=""
-                width={70}
-                height={70}
-                className="absolute -right-4 top-4"
+                width={110}
+                height={120}
+                className="absolute -right-8 top-6"
               />
             </div>
           </div>
@@ -61,7 +68,7 @@ export function ServiceAreaMap() {
             <h2 className="text-[37.5px] font-bold text-[#ec008c] font-heading">
               {serviceAreaContent.title}
             </h2>
-            <p className="mt-4 text-[16.5px] leading-6 text-[#3d2a55] max-w-md mx-auto lg:mx-0 font-content">
+            <p className="mt-4 text-[16.5px] leading-6 text-[#3d2a55] mx-auto lg:mx-0 font-content">
               {serviceAreaContent.description}
             </p>
             <Button
@@ -73,7 +80,7 @@ export function ServiceAreaMap() {
           </div>
         </div>
 
-        <div className="mx-auto mt-14 hidden max-w-[1180px] gap-6 lg:grid lg:grid-cols-3">
+        <div className="mx-auto mt-[160px] hidden max-w-[1180px] gap-6 lg:grid lg:grid-cols-3">
           {actionCards.slice(0, 3).map((card) => (
             <div
               key={card.title}
