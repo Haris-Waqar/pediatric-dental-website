@@ -5,9 +5,8 @@ import Image from "next/image";
 import { welcomeContent } from "@/lib/constants";
 import heroWave from "../../../public/images/hero-wave.webp";
 import toothPink from "../../../public/images/tooth-pink.webp";
-import ladybugRed from "../../../public/images/ladybug-red.webp";
 import dentistTeam from "../../../public/images/dentist-team.jpg";
-import orangeWave from "../../../public/images/orange-wave.png";
+import orangeWave from "../../../public/images/orange-wave.webp";
 import {
   Carousel,
   CarouselContent,
@@ -20,18 +19,33 @@ import {
 const services = [
   {
     title: "Children's Dentistry",
-    color: "bg-blue-400",
-    icon: "🦷",
+    color: "bg-[#4db8e8]",
+    icon: "/images/tooth-children-dentistry.svg",
   },
   {
     title: "Cleanings & Exams",
-    color: "bg-green-400",
-    icon: "🦷",
+    color: "bg-[#8dc63f]",
+    icon: "/images/tooth-cleanings-exams.svg",
   },
   {
     title: "Sedation Dentistry",
-    color: "bg-purple-600",
-    icon: "🦷",
+    color: "bg-[#6c4b8c]",
+    icon: "/images/tooth-sedation-dentistry.svg",
+  },
+  {
+    title: "Orthodontics",
+    color: "bg-[#f5821f]",
+    icon: "/images/tooth-children-dentistry.svg",
+  },
+  {
+    title: "Dental Emergencies",
+    color: "bg-[#ec008c]",
+    icon: "/images/tooth-cleanings-exams.svg",
+  },
+  {
+    title: "Special Needs Dentistry",
+    color: "bg-[#e31a1a]",
+    icon: "/images/tooth-sedation-dentistry.svg",
   },
 ];
 
@@ -50,7 +64,7 @@ export function Welcome() {
   }, [api]);
 
   return (
-    <section className="relative bg-white pb-20 pt-[100px] overflow-hidden">
+    <section className="relative bg-white pt-[100px] overflow-hidden">
       {/* Top Wave Background */}
       <div className="absolute top-0 left-0 right-0 z-0 w-full pointer-events-none">
         <Image
@@ -59,18 +73,6 @@ export function Welcome() {
           width={1920}
           height={220}
           className="w-full h-auto scale-y-[-1] opacity-30"
-          priority
-        />
-      </div>
-
-      {/* Bottom Orange Wave Background */}
-      <div className="absolute bottom-0 left-0 right-0 z-0 w-full pointer-events-none">
-        <Image
-          src={orangeWave}
-          alt=""
-          width={1920}
-          height={220}
-          className="w-full h-auto scale-y-[-1]"
           priority
         />
       </div>
@@ -88,45 +90,40 @@ export function Welcome() {
 
       <div className="relative z-[3] px-6 lg:px-[96px]">
         <div className="mx-auto max-w-6xl">
-          {/* Title */}
-          <div className="text-center lg:text-right mb-12">
-            <h2 className="text-[28px] sm:text-[32px] lg:text-[36px] font-bold text-[#6c4b8c] font-heading leading-tight">
-              Welcome to <span className="text-[#6c4b8c]">Brooks Pediatric Dentistry & Orthodontics</span> in San Antonio, TX!
-            </h2>
-          </div>
-
           {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-center mb-16">
+          <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center mb-16">
             {/* Team Image - Left */}
-            <div className="flex justify-center lg:justify-start relative">
-              <div className="relative h-[250px] w-[310px] overflow-hidden rounded-[46%] bg-white shadow-[0_20px_36px_rgba(0,0,0,0.12)] sm:h-[300px] sm:w-[360px] lg:h-[320px] lg:w-[400px]">
+            <div className="flex justify-center lg:justify-start">
+              <div className="relative">
+                <div className="relative w-[320px] h-[295px] sm:w-[420px] sm:h-[387px] lg:w-[562px] lg:h-[517px] overflow-hidden rounded-[50%] bg-white shadow-[0_16px_30px_rgba(0,0,0,0.18)]">
+                  <Image
+                    src={dentistTeam}
+                    alt="Brooks Pediatric Dentistry team"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
                 <Image
-                  src={dentistTeam}
-                  alt="Brooks Pediatric Dentistry team"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              {/* Ladybug - Bottom Right of Image */}
-              <div className="absolute -bottom-4 -right-4 hidden lg:block z-10">
-                <Image
-                  src={ladybugRed}
+                  src={toothPink}
                   alt=""
-                  width={64}
-                  height={64}
-                  className="w-[50px] h-[50px] lg:w-[64px] lg:h-[64px]"
+                  width={80}
+                  height={80}
+                  className="absolute -left-8 -top-8"
                 />
               </div>
             </div>
 
             {/* Text Content - Right */}
-            <div className="text-left space-y-4">
-              <div className="text-[15px] leading-7 text-[#3d2a55] font-content">
-                <p className="mb-4">
+            <div className="text-left">
+              <h2 className="text-[37.5px] font-bold text-[#6c4b8c] font-heading leading-tight">
+                Welcome to <span className="text-[#6c4b8c]">Brooks Pediatric Dentistry & Orthodontics</span> in San Antonio, TX!
+              </h2>
+              <div className="mt-4 space-y-4 text-[16.85px] leading-7 text-[#3d2a55]">
+                <p>
                   At <strong className="font-semibold">Brooks Pediatric Dentistry & Orthodontics</strong>, we go beyond just caring for teeth — we build confidence, trust, and lifelong healthy habits in every child we see. As your local pediatric dentist in San Antonio, we specialize in compassionate, kid-friendly care tailored to each child's unique dental needs.
                 </p>
-                <p className="mb-4">
+                <p>
                   Whether it's your child's first visit or you're searching for a Kids Dentist Near Me, we're proud to serve families with expert pediatric care and gentle orthodontics right here in Brooks City Base and surrounding neighborhoods.
                 </p>
               </div>
@@ -139,25 +136,23 @@ export function Welcome() {
               setApi={setApi}
               opts={{
                 align: "start",
-                loop: false,
+                loop: true,
               }}
               className="w-full"
             >
-              <CarouselContent className="-ml-2 md:-ml-4">
+              <CarouselContent className="-ml-6">
                 {services.map((service, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                    <div className={`${service.color} rounded-2xl p-8 h-[200px] flex flex-col items-center justify-center text-white shadow-lg`}>
-                      <div className="text-6xl mb-4">{service.icon}</div>
-                      <h3 className="text-xl font-bold text-center font-heading leading-tight">
-                        {service.title.includes("&") ? (
-                          <>
-                            {service.title.split(" & ")[0]}
-                            <br />
-                            & {service.title.split(" & ")[1]}
-                          </>
-                        ) : (
-                          service.title
-                        )}
+                  <CarouselItem key={index} className="pl-6 basis-full md:basis-1/2 lg:basis-1/3">
+                    <div className={`${service.color} rounded-[2.5rem] p-[2.5rem] w-full lg:w-[334px] h-[277px] flex flex-col items-center justify-center text-white shadow-lg`}>
+                      <Image
+                        src={service.icon}
+                        alt={service.title}
+                        width={90}
+                        height={90}
+                        className="mb-4"
+                      />
+                      <h3 className="text-[37.5px] font-bold text-center font-heading leading-tight">
+                        {service.title}
                       </h3>
                     </div>
                   </CarouselItem>
@@ -180,6 +175,18 @@ export function Welcome() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Bottom Orange Wave - normal flow so it always sits below carousel */}
+      <div className="w-full pointer-events-none mt-20">
+        <Image
+          src={orangeWave}
+          alt=""
+          width={1920}
+          height={220}
+          className="w-full h-auto"
+          priority
+        />
       </div>
     </section>
   );
