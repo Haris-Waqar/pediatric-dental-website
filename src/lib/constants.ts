@@ -146,7 +146,7 @@ We believe that positive early dental experiences set the foundation for a lifet
 };
 
 export const gentleCareContent = {
-  title: "Gentle Care in a Kid-Friendly Environment",
+  title: "Gentle, Fun, and Focused on Kids",
   description: `We understand that visiting the dentist can be overwhelming for children. That's why we've created a practice that feels more like a playground than a doctor's office. Our team is specially trained to work with children of all ages, using gentle techniques and positive reinforcement to build trust and confidence.
 
 From our colorful waiting room to our kid-sized dental chairs, every detail is designed to make your child feel at ease. We take the time to explain procedures in child-friendly terms and celebrate every milestone in your child's dental health journey.`,

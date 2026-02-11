@@ -212,6 +212,49 @@
   color: rgb(255 255 255);
 }
 
+@utility text-color-secondary {
+  color: var(--color-brand-green);
+}
+
+@utility text-color-red {
+  color: #e31a1a;
+}
+
+/* Brooks header1_card styles */
+.header1_cards-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 3.5rem;
+  grid-row-gap: 3.5rem;
+}
+
+@media (max-width: 767px) {
+  .header1_cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.header1_card {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+  background-color: white;
+  border-radius: 3.1875rem;
+  padding: 3rem;
+  box-shadow: 0 2px 5px rgba(27, 107, 137, 0.4);
+}
+
+@media (max-width: 767px) {
+  .header1_card {
+    padding: 2rem;
+  }
+}
+
 /* Brooks team5 carousel icon - responsive sizing */
 .team5_image {
   width: 6rem;

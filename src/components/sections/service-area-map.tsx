@@ -10,7 +10,7 @@ import toothBlue from "../../../public/images/tooth-blue.webp";
 
 export function ServiceAreaMap() {
   return (
-    <section id="map" className="relative bg-white pb-20 pt-[120px]">
+    <section id="map" className="relative bg-white pb-20 ">
       <div className="absolute top-0 left-0 right-0 z-[2] w-full pointer-events-none">
         <Image
           src={heroWave}
