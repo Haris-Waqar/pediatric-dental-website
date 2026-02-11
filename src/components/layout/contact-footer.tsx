@@ -26,10 +26,7 @@ export function ContactFooter() {
               <p>Ph: <strong className="underline underline-offset-4">{siteConfig.phone}</strong></p>
             </div>
             <div className="flex justify-center lg:justify-start">
-              <Button
-                className="h-[58px] rounded-[1.2rem] bg-[#f5821f] px-10 text-[18px] font-semibold text-white shadow-sm hover:bg-[#e87713]"
-                asChild
-              >
+              <Button variant="cta" size="lg" className="shadow-md" asChild>
                 <Link href="/contact">Contact Us</Link>
               </Button>
             </div>

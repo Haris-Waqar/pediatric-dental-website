@@ -47,22 +47,13 @@ export function FeatureEmergency() {
 
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              size="lg"
-              className="bg-[#4CAF50] hover:bg-[#388E3C] text-white text-lg px-8"
-              asChild
-            >
+            <Button variant="secondary" size="lg" asChild>
               <a href={`tel:${emergencyContent.phone}`}>
                 <Phone className="h-5 w-5 mr-2" />
                 Call Now: {emergencyContent.phone}
               </a>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#7C51A1] text-lg px-8"
-              asChild
-            >
+            <Button variant="outline-white" size="lg" asChild>
               <Link href="/services/dental-emergencies">Learn More</Link>
             </Button>
           </div>

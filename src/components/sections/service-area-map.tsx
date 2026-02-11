@@ -71,10 +71,7 @@ export function ServiceAreaMap() {
             <p className="mt-4 text-[16.5px] leading-6 text-[#3d2a55] mx-auto lg:mx-0 font-content">
               {serviceAreaContent.description}
             </p>
-            <Button
-              className="mt-6 h-[58px] rounded-[1.2rem] bg-[#ec008c] px-8 text-[18.75px] font-semibold text-white hover:bg-[#d9007f]"
-              asChild
-            >
+            <Button variant="default" size="lg" className="mt-6" asChild>
               <Link href="/contact">Contact Us</Link>
             </Button>
           </div>

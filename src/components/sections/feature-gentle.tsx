@@ -20,10 +20,7 @@ export function FeatureGentle() {
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
-            <Button
-              className="mt-6 h-[58px] rounded-[1.2rem] bg-[#4aa3e5] px-8 text-[18.75px] font-semibold text-white hover:bg-[#2f8ed8]"
-              asChild
-            >
+            <Button variant="tertiary" size="lg" className="mt-6 self-center lg:self-start" asChild>
               <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
@@ -66,10 +63,7 @@ export function FeatureGentle() {
             <p className="mt-10 text-[16.85px] leading-7 text-[#4b3a29]">
               {affordableCareContent.description}
             </p>
-            <Button
-              className="mt-10 h-[58px] rounded-[1.2rem] bg-[#ec008c] px-8 text-[18.75px] font-semibold text-white hover:bg-[#d9007f] self-start"
-              asChild
-            >
+            <Button variant="default" size="lg" className="mt-10 self-start" asChild>
               <Link href="/contact">Learn More</Link>
             </Button>
           </div>
@@ -88,10 +82,7 @@ export function FeatureGentle() {
             <p className="mt-10 text-[16.85px] leading-7 text-[#4b3a29]">
               {emergencyContent.description}
             </p>
-            <Button
-              className="mt-10 h-[58px] rounded-[1.2rem] bg-[#ec008c] px-8 text-[18.75px] font-semibold text-white hover:bg-[#d9007f] self-start"
-              asChild
-            >
+            <Button variant="default" size="lg" className="mt-10 self-start" asChild>
               <Link href="/contact">Contact Us!</Link>
             </Button>
           </div>

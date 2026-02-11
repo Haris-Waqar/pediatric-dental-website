@@ -52,6 +52,16 @@
   --color-brand-purple-dark: #5E3D7A;
   --color-brand-green-dark: #388E3C;
 
+  /* Brooks button colors (match brookspediatricdentistry.com) */
+  --color-brand-pink: #EC008C;
+  --color-brand-pink-hover: #d1007d;
+  --color-brand-orange: #F27F31;
+  --color-brand-orange-hover: #e07025;
+  --color-brand-blue: #4DADEF;
+  --color-brand-blue-hover: #3898d9;
+  --color-brand-orange-cta: #f5821f; /* Hero Schedule button */
+  --color-brand-orange-cta-hover: #e87713;
+
   /* Custom border radius */
   --radius-hero: 3.375rem;
 
@@ -143,6 +153,23 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    /* Brooks' exact root font-size - rem refers to browser default (16px) in these calcs */
+    font-size: calc(0.4375rem + 0.4166666666666667vw);
+    background: var(--color-bg, #ffffff);
+  }
+
+  @media (max-width: 1920px) {
+    html {
+      font-size: calc(0.4375rem + 0.4166666666666667vw);
+    }
+  }
+
+  @media (max-width: 1440px) {
+    html {
+      font-size: calc(0.7188475546305931rem + 0.10405827263267431vw);
+    }
+  }
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-poppins), sans-serif;
@@ -156,5 +183,84 @@
 
   .font-content {
     font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  }
+
+}
+
+
+
+@utility heading-style-h3 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 600;
+  font-family: var(--font-madimi-one), "Arial Rounded MT Bold", Arial, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .heading-style-h3 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .heading-style-h3 {
+    font-size: 2rem;
+  }
+}
+
+@utility text-color-white {
+  color: rgb(255 255 255);
+}
+
+/* Brooks team5 carousel icon - responsive sizing */
+.team5_image {
+  width: 6rem;
+  min-width: 6rem;
+  height: 6rem;
+  min-height: 6rem;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .team5_image {
+    width: 4rem;
+    min-width: 4rem;
+    height: 4rem;
+    min-height: 4rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .team5_image {
+    width: 3.5rem;
+    min-width: 3.5rem;
+    height: 3.5rem;
+    min-height: 3.5rem;
+  }
+}
+
+@utility text-size-medium {
+  font-size: 1.13rem;
+  flex-flow: wrap;
+}
+
+@media (max-width: 767px) {
+  .text-size-medium {
+    font-size: 1rem;
+  }
+}
+
+@utility heading-style-h1 {
+  /* Uses rem - matches Brooks now that root font-size is aligned (4rem = 51px at 1280px) */
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.2;
+
+  @media (max-width: 767px) {
+    font-size: 3.5rem;
+  }
+
+  @media (max-width: 479px) {
+    font-size: 3rem;
   }
 }

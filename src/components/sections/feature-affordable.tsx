@@ -31,19 +31,10 @@ export function FeatureAffordable() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                size="lg"
-                className="bg-[#4CAF50] hover:bg-[#388E3C] text-white"
-                asChild
-              >
+              <Button variant="tertiary" size="lg" asChild>
                 <Link href="/patient-info/insurance">Insurance Info</Link>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-[#4CAF50] text-[#4CAF50] hover:bg-[#4CAF50] hover:text-white"
-                asChild
-              >
+              <Button variant="default" size="lg" asChild>
                 <Link href="/contact">Contact Us</Link>
               </Button>
             </div>

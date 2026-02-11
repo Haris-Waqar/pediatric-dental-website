@@ -58,11 +58,7 @@ export function ServicesGrid() {
         </div>
 
         <div className="text-center mt-12">
-          <Button
-            size="lg"
-            className="bg-[#7C51A1] hover:bg-[#5E3D7A] text-white"
-            asChild
-          >
+          <Button variant="default" size="lg" asChild>
             <Link href="/services">View All Services</Link>
           </Button>
         </div>

@@ -75,42 +75,42 @@ export function Header() {
   const [mobileNavOpen, setMobileNavOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#38B6FF]">
-      <div className="w-full px-6 lg:px-[96px] min-h-[85px py-1">
-        <div className="flex h-[78px] items-center justify-between gap-6">
-          <div className="flex items-center gap-12">
+    <header className="sticky top-0 z-[1000] w-full bg-[#4DADEF] text-white border-b border-white/20">
+      <div className="w-full px-[5vw] min-h-[5.5rem] flex items-center">
+        <div className="flex w-full items-center justify-between gap-4">
+          <div className="flex items-center gap- lg:gap-14 md:pl-[2rem]">
             {/* Logo */}
-            <Link href="/" className="flex items-center justify-center min-w-[150px]">
+            <Link href="/" className="flex items-center justify-center shrink-0">
               <Image
                 src={logo}
                 alt="Brooks Pediatric Dentistry logo"
                 width={155}
                 height={85}
                 priority
-                className="h-auto w-auto max-h-[85px]"
+                className="h-auto w-auto max-h-[4.5rem] lg:max-h-[5.25rem]"
               />
             </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center">
               <NavigationMenu>
-                <NavigationMenuList className="gap-0">
+                <NavigationMenuList className="gap-0.5">
                   {mainNav.map((item) => (
                     <NavigationMenuItem key={item.label}>
                       {item.children ? (
                         <>
-                          <NavigationMenuTrigger className="bg-transparent text-white hover:bg-transparent hover:text-[#ff3399] focus:bg-transparent focus:text-[#ff3399] data-[state=open]:bg-transparent data-[state=open]:text-[#ff3399] px-3 py-2 text-[15px] font-semibold tracking-tight h-auto font-heading transition-colors [&_svg]:text-current [&_svg]:transition-colors">
+                          <NavigationMenuTrigger className="bg-transparent text-base text-white hover:bg-transparent hover:text-[#ff3399] focus:bg-transparent focus:text-[#ff3399] data-[state=open]:bg-transparent data-[state=open]:text-[#ff3399] px-4 py-5 gap-2  tracking-tight h-auto font-heading transition-colors cursor-pointer select-none [&_svg]:text-current [&_svg]:transition-colors [&_svg]:shrink-0">
                             {item.label}
                           </NavigationMenuTrigger>
                           <NavigationMenuContent>
-                            <ul className="grid w-[260px] gap-1 p-4">
+                            <ul className="grid w-[260px] gap-0 p-4">
                               {item.children.map((child, index) => (
                                 <li key={child.label}>
                                   <NavigationMenuLink asChild>
                                     <Link
                                       href={child.href}
                                       className={cn(
-                                        "block select-none rounded-md px-4 py-2.5 leading-tight no-underline outline-none transition-colors font-content",
+                                        "block select-none rounded-md p-5 leading-tight no-underline outline-none transition-colors font-content",
                                         index === 0 
                                           ? "text-base font-bold text-black font-heading" 
                                           : "text-sm font-semibold text-black hover:bg-[#38B6FF]/10 hover:text-[#38B6FF] focus:bg-[#38B6FF]/10 focus:text-[#38B6FF]"
@@ -129,7 +129,7 @@ export function Header() {
                           asChild
                           className={cn(
                             navigationMenuTriggerStyle(),
-                            "bg-transparent text-white hover:bg-transparent hover:text-[#ff3399] focus:bg-transparent focus:text-[#ff3399] px-3 py-2 text-[15px] font-semibold tracking-tight h-auto font-heading transition-colors"
+                            "bg-transparent text-white hover:bg-transparent hover:text-[#ff3399] focus:bg-transparent focus:text-[#ff3399] px-4 py-5 text-[inherit] font-semibold tracking-tight h-auto font-heading transition-colors cursor-pointer"
                           )}
                         >
                           <Link href={item.href}>{item.label}</Link>
@@ -142,22 +142,14 @@ export function Header() {
             </div>
           </div>
 
-          {/* Desktop CTAs */}
-          <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
-            <Button
-              size="sm"
-              className="rounded-[1.2rem] bg-[#EC008C] pt-[15px] pr-[18.75px] pb-[9px] pl-[18.75px] h-[48.98px] text-[16.65px] font-semibold text-white hover:bg-[#d1007d] shadow-md border-0 font-content"
-              asChild
-            >
+          {/* Desktop CTAs - Brooks: .button.is-small (Schedule), .button.is-secondary.is-small (Phone) */}
+          <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
+            <Button variant="default" size="sm" className="shadow-md" asChild>
               <Link href="https://flexbook.me/brookspd/website" target="_blank">
                 Schedule Appointment
               </Link>
             </Button>
-            <Button
-              size="sm"
-              className="rounded-[1.2rem] bg-[#F27F31] pt-[15px] pr-[18.75px] pb-[9px] pl-[18.75px] h-[48.98px] text-[16.65px] font-semibold text-white hover:bg-[#e07025] shadow-md border-0 font-content"
-              asChild
-            >
+            <Button variant="secondary" size="sm" className="shadow-md" asChild>
               <a href="tel:2108019715">210-801-9715</a>
             </Button>
           </div>

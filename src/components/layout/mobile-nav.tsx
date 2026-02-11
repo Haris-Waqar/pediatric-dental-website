@@ -109,16 +109,12 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
             </div>
 
             <div className="flex flex-col gap-2">
-              <Button className="w-full bg-[#4CAF50] hover:bg-[#388E3C]" asChild>
+              <Button variant="default" size="default" className="w-full" asChild>
                 <Link href="/contact" onClick={() => onOpenChange(false)}>
                   Schedule Appointment
                 </Link>
               </Button>
-              <Button
-                variant="outline"
-                className="w-full border-[#7C51A1] text-[#7C51A1] hover:bg-[#7C51A1] hover:text-white"
-                asChild
-              >
+              <Button variant="secondary" size="default" className="w-full" asChild>
                 <a href={`tel:${siteConfig.phone}`}>
                   <Phone className="h-4 w-4 mr-2" />
                   Call Now
