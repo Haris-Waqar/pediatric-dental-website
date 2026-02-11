@@ -8,6 +8,8 @@ import heroBackground from "../../../public/images/hero-background.webp";
 import ladybugSmall from "../../../public/images/ladybug-red.webp";
 import toothBlue from "../../../public/images/tooth-blue.webp";
 
+const actionCardsSlice = actionCards.slice(0, 3);
+
 export function ServiceAreaMap() {
   return (
     <section id="map" className="relative bg-white pb-20 ">
@@ -31,9 +33,9 @@ export function ServiceAreaMap() {
         />
       </div>
 
-      <div className="relative z-[3] px-6 lg:px-12">
-        <div className="bg-white mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1fr_1.4fr]">
-          <div className="flex justify-center">
+      <div className="relative z-[3] px-[5%]">
+        <div className="bg-white px-[5%] max-w-[88rem] mx-auto header21_component mb-[8rem]">
+          <div className="flex justify-center order-2 lg:order-1">
             <div className="relative">
               <div
                 className="relative h-[280px] w-[280px] overflow-hidden bg-white shadow-[0_18px_36px_rgba(0,0,0,0.12)] sm:h-[360px] sm:w-[360px] lg:h-[460px] lg:w-[460px]"
@@ -64,11 +66,11 @@ export function ServiceAreaMap() {
             </div>
           </div>
 
-          <div className="text-center lg:text-left">
-            <h2 className="text-[37.5px] font-bold text-[#ec008c] font-heading">
+          <div className="text-left order-1 lg:order-2">
+            <h2 className="heading-style-h3 text-[#ec008c] ">
               {serviceAreaContent.title}
-            </h2>
-            <p className="mt-4 text-[16.5px] leading-6 text-[#3d2a55] mx-auto lg:mx-0 font-content">
+            </h2> 
+            <p className="mt-4 text-size-medium leading-7 text-[#3d2a55] mx-auto lg:mx-0 font-content">
               {serviceAreaContent.description}
             </p>
             <Button variant="default" size="lg" className="mt-6" asChild>
@@ -77,32 +79,36 @@ export function ServiceAreaMap() {
           </div>
         </div>
 
-        <div className="mx-auto mt-[160px] hidden max-w-[1180px] gap-6 lg:grid lg:grid-cols-3">
-          {actionCards.slice(0, 3).map((card) => (
-            <div
-              key={card.title}
-              className="flex h-[277px] w-[370px] items-center justify-center rounded-[28px] px-6 text-center text-white shadow-[0_18px_34px_rgba(0,0,0,0.18)]"
-              style={{
-                background:
-                  card.icon === "calendar"
-                    ? "#7C51A1"
-                    : card.icon === "file-text"
-                      ? "#ec008c"
-                      : "#4aa3e5",
-              }}
-            >
-              <div>
-                <div className="mb-4 flex items-center justify-center">
-                  {card.icon === "calendar" && <Calendar className="h-[90px] w-[90px]" />}
-                  {card.icon === "file-text" && <FileText className="h-[90px] w-[90px]" />}
-                  {card.icon === "map-pin" && <MapPin className="h-[90px] w-[90px]" />}
+        {/* Action cards: single column on mobile, grid on desktop */}
+        <div className="mx-auto mt-[5rem] max-w-[1000px] px-6 lg:px-0 grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {actionCardsSlice.map((card, index) => {
+            const colorClass =
+              index === 0
+                ? "" // purple (default)
+                : index === 1
+                  ? "is--pink"
+                  : "is--blue";
+            return (
+              <Link key={card.title} href={card.href} className="block w-full">
+                <div
+                  className={`team5_item flex w-full lg:mx-0 mx-auto items-center justify-center text-white lg:shadow-[0_18px_34px_rgba(0,0,0,0.18)] ${colorClass}`}
+                >
+                <div className="flex flex-col items-center justify-center">
+                  <div className="mb-4">
+                    {card.icon === "calendar" && <Calendar className="team5_image" />}
+                    {card.icon === "file-text" && <FileText className="team5_image" />}
+                    {card.icon === "map-pin" && <MapPin className="team5_image" />}
+                  </div>
+                  <div>
+                    <h3 className="heading-style-h3 font-normal text-color-white whitespace-pre-line leading-snug">
+                      {card.title}
+                    </h3>
+                  </div>
                 </div>
-                <h3 className="whitespace-pre-line text-[37.5px] leading-snug font-semibold font-heading">
-                  {card.title}
-                </h3>
               </div>
-            </div>
-          ))}
+            </Link>
+            );
+          })}
         </div>
       </div>
     </section>

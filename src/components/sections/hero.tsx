@@ -12,7 +12,7 @@ import toothPink from "../../../public/images/tooth-pink.webp";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#7C51A1] pb-[180px]  pt-[10rem]">
+    <section className="relative overflow-hidden bg-[#7C51A1] pb-[180px] pt-[7rem]  md:pt-[10rem]">
       {/* Background Image Layer */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -37,7 +37,7 @@ export function Hero() {
           />
         </div>
         {/* Blue Tooth - Mobile: top right | Desktop: above center/heading */}
-        <div className="absolute right-[4%] top-[8%] lg:right-auto lg:left-[35%] lg:top-[18%]">
+        <div className="absolute right-[4%] top-[6%] lg:right-auto lg:left-[35%] lg:top-[18%]">
           <Image
             src={toothBlue}
             alt=""
@@ -70,7 +70,7 @@ export function Hero() {
               <strong>Top Pediatric Dentist in San Antonio</strong>
             </h1>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button variant="cta" size="lg" className="shadow-lg w-full sm:w-auto" asChild>
+              <Button variant="cta" size="lg" className="shadow-lg w-2/3 sm:w-auto" asChild>
                 <Link href={heroContent.ctaHref}>{heroContent.ctaText}</Link>
               </Button>
             </div>

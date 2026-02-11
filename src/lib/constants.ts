@@ -116,7 +116,7 @@ export const actionCards: ActionCard[] = [
     icon: "calendar",
   },
   {
-    title: "Patient Forms",
+    title: "Review Patient Forms",
     description: "Download and complete forms before your visit",
     buttonText: "Get Forms",
     href: "/patient-info/forms",
@@ -170,7 +170,7 @@ export const emergencyContent = {
 };
 
 export const serviceAreaContent = {
-  title: "Proudly Serving San Antonio and Surrounding Areas",
+  title: "Proudly Serving Brooks City Base and Beyond",
   description: `Brooks Pediatric Dentistry is conveniently located in North San Antonio, serving families throughout the greater San Antonio area including Stone Oak, Alamo Heights, Shavano Park, Hollywood Park, and surrounding communities.`,
   areas: [
     "Stone Oak",

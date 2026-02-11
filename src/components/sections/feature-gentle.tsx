@@ -8,7 +8,7 @@ import heroWave from "../../../public/images/hero-wave.webp";
 
 export function FeatureGentle() {
   return (
-    <section className="relative overflow-hidden bg-[#F49D46] pb-10 text-[#2b1f12]">
+    <section className="relative overflow-hidden bg-[#F49D46] pb-16 text-[#2b1f12]">
       <div className="relative z-[3] px-[5%]">
         <div className="mx-auto px-[5%] grid max-w-[1220px] items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] mb-20">
           <div >
@@ -74,7 +74,7 @@ export function FeatureGentle() {
               <strong>{emergencyContent.title}</strong>
             </h3>
             <p className="text-size-medium">
-              Dental emergencies can happen anytime. If you're asking, "Is there a pediatric dentist near me for urgent care?", our emergency pediatric dental team in San Antonio is ready to help. Call us right away, and we'll guide you through next steps and prepare for your arrival.
+              Dental emergencies can happen anytime. If you're asking, "Is there a pediatric dentist near me for urgent care?", our emergency pediatric dental team in San Antonio is ready to help. Call us right away, and we'll guide you through next steps.
             </p>
             <Button variant="default" size="default" className="mt-auto" asChild>
               <Link href="/contact">Contact Us!</Link>

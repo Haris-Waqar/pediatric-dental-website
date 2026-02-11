@@ -67,10 +67,16 @@ export function Welcome() {
 
       <div className="relative z-[3]">
         <div className="mx-auto">
-          {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center mb-16 px-[7%]">
-            {/* Team Image - Left */}
-            <div className="flex justify-center ">
+          {/* Main Content Grid - background image layer for mobile only */}
+          <div className="relative mb-16 px-6 lg:px-[7%]">
+            <div
+              className="welcome-mobile-bg absolute inset-0 rounded-lg lg:hidden"
+              style={{ backgroundImage: `url(${welcomeBg.src})` }}
+              aria-hidden
+            />
+            <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center relative z-10">
+            {/* Team Image - Left on desktop, second on mobile */}
+            <div className="flex justify-center order-2 lg:order-none">
               <div className="relative">
                 <div className="relative w-[320px] h-[295px] sm:w-[420px] sm:h-[387px] lg:w-[562px] lg:h-[517px] overflow-hidden rounded-[50%] bg-white shadow-[0_16px_30px_rgba(0,0,0,0.18)]">
                   <Image
@@ -91,9 +97,9 @@ export function Welcome() {
               </div>
             </div>
 
-            {/* Text Content - Right */}
+            {/* Text Content - Right on desktop, first on mobile; bg image on desktop only, mobile uses wrapper bg */}
             <div 
-              className="text-left relative bg-cover bg-center bg-no-repeat p-6 lg:p-8 rounded-lg"
+              className="welcome-text-block text-left relative p-6 lg:p-8 rounded-lg order-1 lg:order-none lg:bg-cover lg:bg-center lg:bg-no-repeat"
               style={{ backgroundImage: `url(${welcomeBg.src})` }}
             >
               <h2 className="heading-style-h3 font-normal text-[#6c4b8c]  leading-tight">
@@ -105,10 +111,11 @@ export function Welcome() {
                 </p>
               </div>
             </div>
+            </div>
           </div>
 
           {/* Service Carousel - Brooks team5_item + testimonial9_slide styles */}
-          <div className="mt-16 relative md:px-[12rem] px-8">
+          <div className="mt-16 relative px-6 md:px-[12rem] overflow-x-hidden">
             <Carousel
               setApi={setApi}
               opts={{
@@ -117,17 +124,17 @@ export function Welcome() {
               }}
               className="w-full"
             >
-              <CarouselContent className="-ml-6">
+              <CarouselContent className="!ml-0 items-stretch">
                 {services.map((service, index) => (
                   <CarouselItem
                     key={index}
-                    className="px-6 basis-full md:basis-1/2 lg:basis-1/3 shrink-0"
+                    className="basis-full md:basis-1/2 lg:basis-1/3 shrink-0 min-w-0 flex !px-3"
                     role="group"
                     aria-label={`${index + 1} of ${services.length}`}
                   >
-                    <Link href={service.href} className="block h-full">
+                    <Link href={service.href} className="block h-full w-full min-h-0">
                       <div
-                        className={`${service.color} rounded-[2.5rem] p-[2.5rem] text-center flex flex-col items-center justify-center text-white shadow-[0_2px_5px_rgba(0,0,0,0.2)]`}
+                        className={`${service.color} h-full  rounded-[2.5rem] p-[2.5rem] text-center flex flex-col items-center justify-center text-white shadow-[0_2px_5px_rgba(0,0,0,0.2)]`}
                       >
                         <div className="mb-4">
                           <Image

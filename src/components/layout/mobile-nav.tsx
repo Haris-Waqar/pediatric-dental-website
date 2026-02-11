@@ -38,10 +38,10 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
             <Button
               variant="ghost"
               size="icon"
-              className="text-white hover:bg-white/20"
+              className="text-black hover:bg-white/20 hover:text-black"
               onClick={() => onOpenChange(false)}
             >
-              <X className="h-5 w-5" />
+              <X className="h-7 w-7 shrink-0" />
             </Button>
           </div>
         </SheetHeader>

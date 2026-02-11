@@ -113,6 +113,7 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: #7C51A1;
+  --text-color--text-secondary: #6c4b8c;
 }
 
 .dark {
@@ -189,6 +190,20 @@
 
 
 
+/* Welcome section: background image on mobile (applies to full content area) */
+.welcome-mobile-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1023px) {
+  .welcome-text-block {
+    background: transparent !important;
+    background-image: none !important;
+  }
+}
+
 @utility heading-style-h3 {
   font-size: 2.5rem;
   line-height: 1.2;
@@ -208,6 +223,28 @@
   }
 }
 
+@utility heading-style-h2 {
+  font-size: 3rem;
+  line-height: 1.2;
+  font-family: var(--font-madimi-one), "Arial Rounded MT Bold", Arial, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .heading-style-h2 {
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .heading-style-h2 {
+    font-size: 2.25rem;
+  }
+}
+
+.text-color-pink {
+  color: var(--color-brand-pink);
+}
+
 @utility text-color-white {
   color: rgb(255 255 255);
 }
@@ -218,6 +255,44 @@
 
 @utility text-color-red {
   color: #e31a1a;
+}
+
+/* Mobile header action buttons (Call Now, Directions, Schedule) */
+.header-mobile-buttons {
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+}
+.header-mobile-btn {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #000;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.header-mobile-btn--primary {
+  background-color: #4DADEF;
+}
+.header-mobile-btn--primary:hover {
+  background-color: #3da0e0;
+  color: #000;
+}
+.header-mobile-btn--secondary {
+  background-color: #fff;
+}
+.header-mobile-btn--secondary:hover {
+  background-color: #f0f9ff;
+  color: #000;
+}
+.header-mobile-btn:first-child {
+  border-radius: 0 0 0 0.5rem;
+  border-right: 1px solid #000;
+}
+.header-mobile-btn:nth-child(2) {
+  border-right: 1px solid #000;
+}
+.header-mobile-btn:last-child {
+  border-radius: 0 0 0.5rem 0;
 }
 
 /* Brooks header1_card styles */
@@ -255,6 +330,39 @@
   }
 }
 
+/* Brooks header21_component styles */
+.header21_component {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 5rem;
+  grid-row-gap: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .header21_component {
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    grid-column-gap: 0rem;
+    grid-row-gap: 4rem;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .header21_component {
+    grid-row-gap: 3rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .header21_component {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Brooks team5 carousel icon - responsive sizing */
 .team5_image {
   width: 6rem;
@@ -280,6 +388,158 @@
     height: 3.5rem;
     min-height: 3.5rem;
   }
+}
+
+/* Brooks team5_item – action cards (service area / welcome-style) */
+.team5_item {
+  background-color: var(--color-brand-purple);
+  text-align: center;
+  border-radius: 2.5rem;
+  height: 100%;
+  padding: 2.5rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+}
+
+.team5_item.is--third,
+.team5_item.is--purple {
+  background-color: var(--color-brand-purple);
+}
+
+.team5_item.is--pink {
+  background-color: var(--color-brand-pink);
+}
+
+.team5_item.is--blue {
+  background-color: var(--color-brand-blue);
+}
+
+/* Brooks footer3 styles (brookspediatricdentistry.com) */
+.footer3_link.text-weight-bold {
+  color: var(--text-color--text-secondary, #6c4b8c);
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+.footer3_link.text-weight-bold:hover {
+  color: var(--color-brand-pink, #EC008C);
+}
+.footer3_link {
+  color: var(--text-color--text-secondary, #6c4b8c);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-decoration: none;
+  display: flex;
+  transition: color 0.2s ease;
+}
+.footer3_link:hover {
+  color: var(--color-brand-pink, #EC008C);
+}
+
+@media screen and (max-width: 479px) {
+  .footer3_logo-link {
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+  }
+}
+.footer3_logo-link {
+  float: none;
+  padding-left: 0;
+}
+
+.footer_logo {
+  height: 7em;
+}
+
+@media screen and (max-width: 767px) {
+  .footer_logo {
+    height: 6em;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .footer_logo {
+    aspect-ratio: 1;
+    object-fit: contain;
+    width: 12rem;
+    height: 10rem;
+  }
+}
+
+/* Footer mobile layout: stacked then 2-col links (match brookspediatricdentistry.com) */
+.footer-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+    justify-items: center;
+  }
+}
+
+.footer-top {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .footer-top {
+    justify-self: start;
+  }
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 1.5rem;
+  align-content: start;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .footer-links {
+    display: contents;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-links-col {
+    justify-self: start;
+  }
+}
+
+/* Footer contact block: same font as footer links, pink hover */
+.footer-contact-block {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.footer-contact-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  color: var(--text-color--text-secondary, #6c4b8c);
+  transition: color 0.2s ease;
+}
+
+.footer-contact-value {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+  color: var(--text-color--text-secondary, #6c4b8c);
+  transition: color 0.2s ease;
+}
+
+.footer-contact-block:hover .footer-contact-label,
+.footer-contact-block:hover .footer-contact-value {
+  color: var(--color-brand-pink, #EC008C);
 }
 
 @utility text-size-medium {

@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu } from "lucide-react";
+import { Menu, Phone, MapPin, Calendar } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -16,6 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { MobileNav } from "./mobile-nav";
+import { siteConfig } from "@/lib/constants";
 import logo from "../../../public/images/logo.webp";
 
 type MainNavItem = {
@@ -154,17 +155,48 @@ export function Header() {
             </Button>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button - black icon, consistent size */}
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden ml-auto text-white hover:bg-white/10"
+            className="lg:hidden ml-auto text-black hover:bg-white/20 hover:text-black"
             onClick={() => setMobileNavOpen(true)}
           >
-            <Menu className="h-6 w-6" />
+            <Menu className="h-7 w-7 shrink-0" />
             <span className="sr-only">Open menu</span>
           </Button>
         </div>
+      </div>
+
+      {/* Mobile only: Call Now, Directions, Schedule */}
+      <div className="header-mobile-buttons lg:hidden flex w-full border border-black border-t-0">
+        <a
+          href={`tel:${siteConfig.phone.replace(/\D/g, "")}`}
+          className="header-mobile-btn header-mobile-btn--primary flex flex-1 items-center justify-center gap-2 py-3.5 text-black"
+        >
+          <Phone className="h-5 w-5 shrink-0" />
+          <span>Call Now</span>
+        </a>
+        <a
+          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+            `${siteConfig.address.address}, ${siteConfig.address.city}, ${siteConfig.address.state} ${siteConfig.address.zip}`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="header-mobile-btn header-mobile-btn--secondary flex flex-1 items-center justify-center gap-2 border-l border-black py-3.5 text-black"
+        >
+          <MapPin className="h-5 w-5 shrink-0" />
+          <span>Directions</span>
+        </a>
+        <Link
+          href="https://flexbook.me/brookspd/website"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="header-mobile-btn header-mobile-btn--secondary flex flex-1 items-center justify-center gap-2 border-l border-black py-3.5 text-black"
+        >
+          <Calendar className="h-5 w-5 shrink-0" />
+          <span>Schedule</span>
+        </Link>
       </div>
 
       {/* Mobile Navigation */}
